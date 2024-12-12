@@ -1,4 +1,7 @@
 import { createPool } from "mysql2/promise";
+import { config } from "dotenv";
+
+config();
 
 const pool = createPool({
   port: process.env.MYSQL_PORT,
@@ -11,7 +14,7 @@ const pool = createPool({
 const connectToDatabase = async () => {
   try {
     await pool.getConnection();
-    console.log("Mysql coonected successfully 😍 ");
+    console.log("Mysql connected successfully 😍 ");
   } catch (error) {
     console.log("database connection error", error);
     throw error;

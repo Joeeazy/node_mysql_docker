@@ -11,7 +11,7 @@ const route = Router();
 
 route.get("/", getAllProducts);
 
-route.get("/product/:id", getProduct);
+route.get("/:id", getProduct);
 
 route.post("/create", createProduct);
 
